@@ -31,7 +31,7 @@ function createFetcher(config) {
             const cachedResp = cache.get(requestHash)
 
             if (!cachedResp) {
-                logger.info({
+                logger({
                     ...getRequestInfo(config),
                     requestHash,
                     fromCache: false,
@@ -41,7 +41,7 @@ function createFetcher(config) {
                 return httpAdapter(config)
             }
 
-            logger.info({
+            logger({
                 ...getRequestInfo(config),
                 requestHash,
                 fromCache: true,
@@ -49,7 +49,7 @@ function createFetcher(config) {
             return Promise.resolve(cache.get(requestHash))
         }
 
-        logger.info({
+        logger({
             ...getRequestInfo(config),
             requestHash,
             fromCache: false,
@@ -77,7 +77,7 @@ function createFetcher(config) {
             resp.status >= 200 &&
             resp.status < 300
         ) {
-            logger.info({
+            logger({
                 action: 'cache:set',
                 ...getRequestInfo(resp.config),
                 data: resp.data,
