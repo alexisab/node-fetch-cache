@@ -19,8 +19,8 @@
     "homepage": "https://github.com/alexisab/node-fetch-cache#readme",
     "dependencies": {
         "axios": "^0.18.0",
-        "hash": "^0.2.1",
-        "node-cache": "^4.2.0"
+        "node-cache": "^4.2.0",
+        "object-hash": "^1.3.1"
     },
     "devDependencies": {
         "@babel/cli": "^7.2.3",
